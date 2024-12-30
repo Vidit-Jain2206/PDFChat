@@ -15,7 +15,7 @@ export const uploadPdf = async (req: Request, res: Response) => {
     }
 
     // Extract text from the PDF
-    const pdfText = await extractText(file.path);
+    const pdfText = await extractText(file.buffer);
     const extractedText = pdfText.text;
 
     // Upload PDF to S3

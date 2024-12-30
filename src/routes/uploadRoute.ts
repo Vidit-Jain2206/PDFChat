@@ -5,6 +5,6 @@ import { upload } from "../utils/multer";
 
 const router = express.Router();
 
-router.post("/upload", authMiddlewareJWT, upload.single("file"), uploadPdf);
+router.post("/", authMiddlewareJWT, upload.single("file"), uploadPdf);
 
 export default router;

@@ -19,6 +19,7 @@ export const uploadFile = async (file: Express.Multer.File, userId: number) => {
       Bucket: S3_BUCKET,
       Key: `${Date.now()}-${file.originalname}-${userId}`,
       Body: file.buffer,
+      ContentType: file.mimetype,
     };
 
     const command = new PutObjectCommand(uploadParams);
